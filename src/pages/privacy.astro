@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const sections = [
+  {
+    title: '1. Information We Collect',
+    body: 'When you create an account, we collect your email address, display name, and password (securely hashed). When you take a test, we store your answers and computed MBTI results locally on your device and optionally on our servers if you are signed in.',
+  },
+  {
+    title: '2. How We Use Your Information',
+    body: 'We use your information to provide the MBTI personality test service, display your results, and manage your account. We may use anonymized, aggregated data for research and product improvement.',
+  },
+  {
+    title: '3. Data Storage and Security',
+    body: 'Test data is stored locally on your device using SQLite (native) or localStorage (web). Account data and synced test results are stored securely on AWS and Neon Postgres with encryption at rest and in transit.',
+  },
+  {
+    title: '4. Third-Party Services',
+    items: [
+      'AWS Cognito — Authentication and account management',
+      'Google AdMob — Advertising (with your consent on iOS)',
+      'Firebase — Crash reporting and analytics',
+      'PostHog — Product analytics and feature flags',
+    ],
+  },
+  {
+    title: '5. Advertising and Tracking',
+    body: "On iOS, we request your consent via Apple's App Tracking Transparency (ATT) prompt before enabling ad tracking. You can decline without affecting app functionality. On Android, standard advertising identifiers may be used for ad personalization.",
+  },
+  {
+    title: '6. Your Rights',
+    items: [
+      'Access your personal data',
+      'Delete your account and all associated data',
+      'Opt out of ad tracking (iOS ATT prompt)',
+      'Request data export',
+    ],
+  },
+  {
+    title: '7. Data Deletion',
+    body: 'You can delete your account at any time from the Settings tab in the app. This permanently removes your account, test history, and all associated data from our servers.',
+  },
+  {
+    title: "8. Children's Privacy",
+    body: 'This service is not directed to children under 13. We do not knowingly collect personal information from children under 13.',
+  },
+  {
+    title: '9. Changes to This Policy',
+    body: 'We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page.',
+  },
+  {
+    title: '10. Contact',
+    body: 'If you have questions about this privacy policy, please contact us through the app or visit our company page.',
+  },
+];
+---
+
+<Layout title="Privacy Policy — Pocket Personality" description="Privacy Policy for the Pocket Personality app.">
+  <Nav />
+  <main class="doc-page">
+    <div class="doc-inner">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: February 2026</p>
+
+      {sections.map(s => (
+        <div class="section">
+          <h2>{s.title}</h2>
+          {s.body && <p>{s.body}</p>}
+          {s.items && (
+            <ul>
+              {s.items.map(item => <li>{item}</li>)}
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .doc-page {
+    background: #fafaff;
+    min-height: calc(100vh - 60px);
+    padding: 60px 24px 80px;
+  }
+  .doc-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1e1b4b;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .updated {
+    font-size: 0.88rem;
+    color: #9ca3af;
+    margin-bottom: 40px;
+  }
+  .section {
+    margin-bottom: 32px;
+  }
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e1b4b;
+    margin-bottom: 8px;
+  }
+  p {
+    font-size: 0.97rem;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+  ul {
+    margin-top: 8px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  li {
+    font-size: 0.97rem;
+    color: #4b5563;
+    line-height: 1.65;
+  }
+</style>

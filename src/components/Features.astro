@@ -1,0 +1,109 @@
+---
+const features = [
+  {
+    icon: '🧠',
+    title: 'Cognitive Function Analysis',
+    desc: 'Go beyond four letters. Understand your full cognitive function stack — Ni, Fe, Ti, Se, and more — for a richer picture of how you think.',
+  },
+  {
+    icon: '📊',
+    title: 'Detailed Dimension Scores',
+    desc: 'See exactly where you land on each I/E, S/N, T/F, and J/P axis with visual percentage bars, not just a binary result.',
+  },
+  {
+    icon: '🔒',
+    title: 'Private by Default',
+    desc: 'Take the test anonymously, no account needed. Results are stored on your device. Sign in only when you want to sync across devices.',
+  },
+  {
+    icon: '📱',
+    title: 'Native Mobile Experience',
+    desc: 'Built with React Native for iOS and Android. Fast, smooth, and designed for comfortable reading and answering on the go.',
+  },
+  {
+    icon: '🔬',
+    title: 'Research-Grade Scoring',
+    desc: 'Each question carries precisely tuned weights for all 16 cognitive dimensions. No fluff — just thoughtful, empirically-refined scoring.',
+  },
+  {
+    icon: '📖',
+    title: 'Type Profiles',
+    desc: 'Learn about every MBTI type with rich descriptions, cognitive function breakdowns, and insights tailored to your result.',
+  },
+];
+---
+
+<section class="features" id="features">
+  <div class="features-inner">
+    <div class="section-header">
+      <h2>Everything you need to understand yourself</h2>
+      <p>Pocket Personality is built for people who want more than a four-letter label.</p>
+    </div>
+    <div class="grid">
+      {features.map(f => (
+        <div class="card">
+          <div class="card-icon">{f.icon}</div>
+          <h3>{f.title}</h3>
+          <p>{f.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    background: #fafaff;
+    padding: 96px 24px;
+  }
+  .features-inner { max-width: 1100px; margin: 0 auto; }
+  .section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .section-header h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 800;
+    color: #1e1b4b;
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+  }
+  .section-header p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 28px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 8px 32px rgba(79,70,229,0.1);
+    transform: translateY(-2px);
+  }
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 14px;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e1b4b;
+    margin-bottom: 8px;
+  }
+  .card p {
+    font-size: 0.92rem;
+    color: #6b7280;
+    line-height: 1.65;
+  }
+</style>

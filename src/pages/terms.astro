@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const sections = [
+  {
+    title: '1. Acceptance of Terms',
+    body: 'By using Pocket Personality ("the App"), you agree to these Terms of Service. If you do not agree, please do not use the App.',
+  },
+  {
+    title: '2. Description of Service',
+    body: 'The App provides MBTI personality type assessments based on cognitive function analysis. Results are for entertainment and self-reflection purposes only and should not be used as a substitute for professional psychological assessment.',
+  },
+  {
+    title: '3. User Accounts',
+    body: 'You may use the App without an account with limited features. Creating an account requires a valid email address. You are responsible for maintaining the security of your account credentials.',
+  },
+  {
+    title: '4. Acceptable Use',
+    body: 'You agree not to misuse the service, attempt to access unauthorized areas, or use the App for any unlawful purpose.',
+  },
+  {
+    title: '5. Intellectual Property',
+    body: 'The App, its content, and scoring algorithms are protected by intellectual property laws. You may not reproduce, distribute, or create derivative works without permission.',
+  },
+  {
+    title: '6. Disclaimer',
+    body: 'The App is provided "as is" without warranties of any kind. MBTI results are based on self-reported answers and algorithmic analysis, and may not accurately reflect your personality type.',
+  },
+  {
+    title: '7. Limitation of Liability',
+    body: 'We shall not be liable for any indirect, incidental, or consequential damages arising from your use of the App.',
+  },
+  {
+    title: '8. Termination',
+    body: 'We reserve the right to terminate or suspend your account at any time for violations of these terms. You may delete your account at any time from the Settings tab.',
+  },
+  {
+    title: '9. Changes to Terms',
+    body: 'We may update these terms from time to time. Continued use of the App after changes constitutes acceptance of the new terms.',
+  },
+];
+---
+
+<Layout title="Terms of Service — Pocket Personality" description="Terms of Service for the Pocket Personality app.">
+  <Nav />
+  <main class="doc-page">
+    <div class="doc-inner">
+      <h1>Terms of Service</h1>
+      <p class="updated">Last updated: February 2026</p>
+
+      {sections.map(s => (
+        <div class="section">
+          <h2>{s.title}</h2>
+          <p>{s.body}</p>
+        </div>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .doc-page {
+    background: #fafaff;
+    min-height: calc(100vh - 60px);
+    padding: 60px 24px 80px;
+  }
+  .doc-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1e1b4b;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .updated {
+    font-size: 0.88rem;
+    color: #9ca3af;
+    margin-bottom: 40px;
+  }
+  .section {
+    margin-bottom: 32px;
+  }
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e1b4b;
+    margin-bottom: 8px;
+  }
+  p {
+    font-size: 0.97rem;
+    color: #4b5563;
+    line-height: 1.75;
+  }
+</style>
